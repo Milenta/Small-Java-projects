@@ -2,6 +2,7 @@ package mare;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -34,23 +35,25 @@ public class Student {
 	}
 	
 	public int getMaxNum() {
-		int max = Integer.MIN_VALUE;
+		/*int max = Integer.MIN_VALUE;
 		for (int mark : marks) {
 			if (mark > max) {
 				max = mark;
 			}
 		}
-		return max;
+		return max;*/
+		return Collections.max(marks);
 	}
 	
 	public int getMinNum() {
-		int min  = Integer.MAX_VALUE;
+		/*int min  = Integer.MAX_VALUE;
 		for(int mark : marks) {
 			if (mark < min) {
 				min = mark;
 			}
 		}
-		return min;
+		return min;*/
+		return Collections.min(marks);
 	}
 	
 	public BigDecimal getAvarageNum() {
