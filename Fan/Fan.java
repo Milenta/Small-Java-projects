@@ -2,10 +2,12 @@ package mare;
 
 public class Fan {
 
-	// state of object
+	// state of object for creation
 	private String make;
 	private double radius;
 	private String color;
+	
+	// state of object - to change, for methods
 	private boolean isOn = false;
 	private byte speed = 0; // 0 to 5
 	
@@ -20,19 +22,19 @@ public class Fan {
 	
 	public void switchOn() {
 		this.isOn = true; 
+		setSpeed((byte)1);
 	}
 	
 	public void switchOff() {
 		this.isOn = false;
+		setSpeed((byte)0);
 	}
 	
-	public int changeSpeed(byte num) {
-		if(this.speed + num > 0) {
-		this.speed = (byte) (this.speed + num);
-		return speed;
+	public void setSpeed (byte speed) {
+		if(this.speed >= 0 && this.speed <= 5 && isOn == true) {
+		this.speed = speed;
 		} else {
 			this.speed = 0;
-					return 0;
 		}
 	}
 
@@ -40,6 +42,7 @@ public class Fan {
 	public String toString() {
 		return String.format("Made by %s, radius is %f, color is %s, is it on %b, speed is %d",
 				make, radius, color, isOn, speed) ;
+		// sting.format is used to save memory because otherwise a lot of memory would be used
 	}
 
 	
