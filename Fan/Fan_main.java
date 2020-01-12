@@ -8,9 +8,9 @@ public class Fan_main {
 		System.out.println(fan);
 		fan.switchOn();
 		System.out.println(fan);
-		fan.changeSpeed((byte) 1);
+		fan.setSpeed((byte)3);
 		System.out.println(fan);
-		fan.changeSpeed((byte) -2);
+		fan.switchOff();
 		System.out.println(fan);
 		
 	}
